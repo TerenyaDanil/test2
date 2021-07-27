@@ -1,0 +1,108 @@
+.popup {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	top: 0;
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
+	overflow-y: auto;
+	overflow-x: hidden;
+	transition: all 0.3s ease 0s;
+
+	z-index: 100;
+	&-st {
+		.popup__content {
+			background: linear-gradient(to bottom, #78c9c6, #ffffff, #78c9c6);
+		}
+		.popup__close {
+			background: linear-gradient(to right, #ffffff, #77c9c6);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+	}
+	&-pr {
+		.popup__content {
+			background: linear-gradient(to bottom, #034de2, #00e700);
+		}
+		.popup__close {
+			background: linear-gradient(to right, #034de2, #00e700);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+	}
+	&-vp {
+		.popup__content {
+			background: linear-gradient(to bottom, #c82090, #6a14d1);
+		}
+		.popup__close {
+			background: linear-gradient(to right, #c51f92, #6d14cf);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+	}
+}
+.popup.open {
+	opacity: 1;
+	visibility: visible;
+}
+
+.popup__body {
+	min-height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 30px 10px;
+	transition: all 0.8s ease 0s;
+}
+.popup__content {
+	border-radius: 15px;
+
+	max-width: 100%;
+	padding: 14rem 4rem;
+	position: relative;
+	transition: all 0.8s ease 0s;
+
+	border-radius: 4rem;
+
+	&::after {
+		content: "";
+
+		position: absolute;
+		left: 50.15%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+
+		background: url("../img/global.jpg");
+
+		width: calc(100% - 0.5rem);
+		height: calc(100% - 0.5rem);
+		border-radius: 4rem;
+	}
+}
+
+.popup__close {
+	position: absolute;
+	right: 30px;
+	top: 30px;
+	font-size: 20px;
+	color: #fff;
+	text-decoration: none;
+
+	z-index: 10;
+
+	cursor: pointer;
+	@media (max-width: $md3+px) {
+		font-size: 30px;
+		top: 20px;
+		right: auto;
+		left: 50%;
+		transform: translate(-50%, 0);
+	}
+}
+
+.popup__text {
+	position: relative;
+	z-index: 10;
+}
